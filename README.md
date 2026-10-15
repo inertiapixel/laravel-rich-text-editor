@@ -543,3 +543,6 @@ IPX_APP_URL=http://127.0.0.1:8765 npx playwright test tests/browser/integration.
 ## License
 
 MIT. See [LICENSE](LICENSE).
+
+---
+**Crafted in India by [InertiaPixel](https://www.inertiapixel.com/) 🇮🇳**
