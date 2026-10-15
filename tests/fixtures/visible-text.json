@@ -1,0 +1,122 @@
+[
+  {
+    "name": "inline formatting",
+    "html": "<p>Hello <strong>world</strong></p>",
+    "text": "Hello world",
+    "count": 11
+  },
+  {
+    "name": "paragraph breaks are not counted",
+    "html": "<p>ab</p><p>cd</p>",
+    "text": "ab\ncd",
+    "count": 4
+  },
+  {
+    "name": "whitespace collapses",
+    "html": "<p>a   b\n  c</p>",
+    "text": "a b c",
+    "count": 5
+  },
+  {
+    "name": "leading and trailing spaces",
+    "html": "<p>  padded  </p>",
+    "text": "padded",
+    "count": 6
+  },
+  {
+    "name": "non-breaking spaces count",
+    "html": "<p>a&nbsp;&nbsp;b</p>",
+    "text": "a  b",
+    "count": 4
+  },
+  {
+    "name": "line break",
+    "html": "<p>one<br>two</p>",
+    "text": "one\ntwo",
+    "count": 6
+  },
+  {
+    "name": "lists",
+    "html": "<ul><li>One</li><li>Two<ul><li>Three</li></ul></li></ul>",
+    "text": "One\nTwo\nThree",
+    "count": 11
+  },
+  {
+    "name": "table cells",
+    "html": "<table><thead><tr><th>A</th><th>B</th></tr></thead><tbody><tr><td>1</td><td>2</td></tr></tbody></table>",
+    "text": "A\nB\n1\n2",
+    "count": 4
+  },
+  {
+    "name": "code block keeps spaces",
+    "html": "<pre><code>a  b\n  c</code></pre>",
+    "text": "a  b\n  c",
+    "count": 7
+  },
+  {
+    "name": "images count nothing",
+    "html": "<p>a<img src=\"/x.png\" alt=\"Long alternative text\">b</p>",
+    "text": "ab",
+    "count": 2
+  },
+  {
+    "name": "emoji is one code point",
+    "html": "<p>👍</p>",
+    "text": "👍",
+    "count": 1
+  },
+  {
+    "name": "ZWJ family emoji is five code points",
+    "html": "<p>👨‍👩‍👧</p>",
+    "text": "👨‍👩‍👧",
+    "count": 5
+  },
+  {
+    "name": "combining accent is two code points",
+    "html": "<p>é</p>",
+    "text": "é",
+    "count": 2
+  },
+  {
+    "name": "precomposed accent is one code point",
+    "html": "<p>é</p>",
+    "text": "é",
+    "count": 1
+  },
+  {
+    "name": "CJK",
+    "html": "<p>漢字</p>",
+    "text": "漢字",
+    "count": 2
+  },
+  {
+    "name": "entities decode",
+    "html": "<p>&lt;tag&gt; &amp; more</p>",
+    "text": "<tag> & more",
+    "count": 12
+  },
+  {
+    "name": "markup is not counted",
+    "html": "<h2 class=\"ipx-rte-text-center\"><a href=\"https://example.com/a-very-long-url\">Link</a></h2>",
+    "text": "Link",
+    "count": 4
+  },
+  {
+    "name": "empty document",
+    "html": "<p><br></p>",
+    "text": "",
+    "count": 0
+  },
+  {
+    "name": "blockquote and nested blocks",
+    "html": "<blockquote><p>Quote</p><p>More</p></blockquote>",
+    "text": "Quote\nMore",
+    "count": 9
+  },
+  {
+    "name": "script and style content is ignored",
+    "html": "<p>a</p><script>alert('xx')</script><style>p{}</style>",
+    "text": "a",
+    "count": 1
+  }
+]

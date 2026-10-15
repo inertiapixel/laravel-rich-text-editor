@@ -1,0 +1,17 @@
+{
+    "name": "@inertiapixel/laravel-rich-text-editor-build",
+    "private": true,
+    "description": "Development-only build and test tooling for inertiapixel/laravel-rich-text-editor. Consumers never need to install these packages.",
+    "license": "MIT",
+    "type": "module",
+    "scripts": {
+        "build": "node build.mjs",
+        "watch": "node build.mjs --watch",
+        "test": "playwright test",
+        "test:chromium": "playwright test --project=chromium"
+    },
+    "devDependencies": {
+        "@playwright/test": "1.62.0",
+        "esbuild": "0.28.2"
+    }
+}
